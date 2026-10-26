@@ -1,3 +1,9 @@
+/*
+ex: set ft=jsdoc :
+@desc Typescript compiler configuration
+@changed 2026.10.26, 19:35
+@see https://www.typescriptlang.org/it/tsconfig/
+*/
 {
   "files": [],
   "references": [

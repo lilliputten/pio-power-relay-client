@@ -1,0 +1,21 @@
+" vim local configuration file
+" @changed 2026.10.26, 20:00
+
+" Add exclusions for Ctrl-P lookup
+" See Plugins.vim, CtrlP section
+let g:ctrlp_custom_ignore['dir'] = substitute(g:ctrlp_custom_ignore['dir'], ')\$', "|publish|build|.next)$", "g")
+
+let g:coc_npm_command = 'pnpm'
+
+set shellslash " Use forward slashes
+
+let g:coc_user_config = {
+  \ 'tsserver.enable': v:false,
+  \ 'eslint.enable': v:false,
+  \ 'eslint.validate': ['typescript', 'typescriptreact', 'javascript', 'javascriptreact'],
+  \ 'biome.enable': v:false,
+  \ 'oxc.oxlint.enable': v:true,
+  \ 'oxc.oxfmt.enable': v:true,
+  \ 'coc.preferences.formatterExtension': 'coc-oxc',
+  \ }
+

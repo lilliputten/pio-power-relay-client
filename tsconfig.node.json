@@ -1,3 +1,9 @@
+/*
+ex: set ft=jsdoc :
+@desc Core typescript compiler configuration
+@changed 2026.10.26, 19:35
+@see https://www.typescriptlang.org/it/tsconfig/
+*/
 {
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
@@ -17,7 +23,13 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Path Aliases */
+    // "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["vite.config.ts"]
 }
