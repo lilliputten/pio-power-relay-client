@@ -24,12 +24,6 @@ ex: set ft=jsdoc :
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-
-    /* Path Aliases */
-    // "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
   },
   "include": ["vite.config.ts"]
 }

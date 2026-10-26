@@ -5,9 +5,22 @@ ex: set ft=jsdoc :
 @see https://www.typescriptlang.org/it/tsconfig/
 */
 {
+  "compilerOptions": {
+    /* Path Aliases */
+    "baseUrl": ".", // OBSOLETE?
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
   "files": [],
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
   ]
 }
