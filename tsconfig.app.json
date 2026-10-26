@@ -23,7 +23,7 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Path Aliases */
-    "baseUrl": ".", // OBSOLETE?
+    // "baseUrl": ".", // DEPRECATED
     "paths": {
       "@/*": [
         "./src/*"

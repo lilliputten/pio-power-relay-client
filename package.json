@@ -37,6 +37,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",
+    "colorjs.io": "^0.7.1",
     "npm-package-user-scripts-list": "^0.1.10",
     "npm-run-all": "^4.1.5",
     "oxfmt": "^0.74.0",
@@ -48,8 +49,8 @@
   "scripts": {
     "dev": "echo --Run dev server-- && vite",
     "build": "echo --Create build-- && tsc -b && vite build",
-    "lint": "echo --Run linter-- && oxlint src",
-    "format": "echo --Run formatter-- && oxfmt src",
+    "lint": "echo --Run linter-- && oxlint --fix src js-utils",
+    "format": "echo --Run formatter-- && oxfmt src js-utils",
     "preview": "echo --Run a server for built project-- && vite preview",
     "check-types": "echo --Run typescript linter-- && tsc --pretty --noEmit",
     "check-all": "echo --Run all check-ups-- && npm-run-all format lint check-types && echo --All checks passed--",

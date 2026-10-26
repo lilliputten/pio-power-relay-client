@@ -7,7 +7,7 @@ ex: set ft=jsdoc :
 {
   "compilerOptions": {
     /* Path Aliases */
-    "baseUrl": ".", // OBSOLETE?
+    // "baseUrl": ".", // DEPRECATED
     "paths": {
       "@/*": [
         "./src/*"
