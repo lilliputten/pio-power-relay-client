@@ -9,6 +9,13 @@
 
 - Project info: v.0.0.0 / 2026.10.26 19:31:16 +0300
 
+## 🔗 Resources
+
+- [Github repo](https://github.com/lilliputten/pio-power-relay-client)
+- [Issues](https://github.com/lilliputten/pio-power-relay-client/issues)
+
+## Vite readme
+
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
 Currently, two official plugins are available:
