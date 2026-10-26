@@ -1,5 +1,5 @@
 " vim local configuration file
-" @changed 2026.10.26, 20:00
+" @changed 2026.10.26, 20:36
 
 " Add exclusions for Ctrl-P lookup
 " See Plugins.vim, CtrlP section
@@ -10,7 +10,7 @@ let g:coc_npm_command = 'pnpm'
 set shellslash " Use forward slashes
 
 let g:coc_user_config = {
-  \ 'tsserver.enable': v:false,
+  \ 'tsserver.enable': v:true,
   \ 'eslint.enable': v:false,
   \ 'eslint.validate': ['typescript', 'typescriptreact', 'javascript', 'javascriptreact'],
   \ 'biome.enable': v:false,

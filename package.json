@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "pio-power-relay-client",
   "private": false,
   "version": "0.0.0",
@@ -6,11 +7,10 @@
   "description": "ESP32 Controlled Power Relay PlatformIO Project",
   "timetag": "261026-1931",
   "timestamp": "2026.10.26 19:31:16 +0300",
-  "changed": "2026.10.26, 20:27",
+  "changed": "2026.10.26, 20:30",
   "main": "src/main.tsx",
   "author": "lilliputten@gmail.com",
   "license": "MIT",
-  "$schema": "https://json.schemastore.org/package.json",
   "repository": {
     "type": "git",
     "url": "git@github.com:lilliputten/pio-power-relay-client.git"
@@ -20,8 +20,10 @@
     "email": "lilliputten@gmail.com"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
     "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "react-dom": "^19.3.1",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@types/node": "^24.19.2",
@@ -37,10 +39,13 @@
     "vite": "^8.3.4"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "oxlint",
-    "preview": "vite preview",
+    "dev": "echo --Run dev server-- && vite",
+    "build": "echo --Create build-- && tsc -b && vite build",
+    "lint": "echo --Run linter-- && oxlint src",
+    "format": "echo --Run formatter-- && oxfmt src",
+    "preview": "echo --Run a server for built project-- && vite preview",
+    "check-types": "echo --Run typescript linter-- && tsc --pretty --noEmit",
+    "check-all": "echo --Run all check-ups-- && npm-run-all format lint check-types && echo --All checks passed--",
     "scripts-help": "echo --List all available script commands-- && npm-package-user-scripts-list"
   }
 }
