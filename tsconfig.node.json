@@ -23,7 +23,7 @@ ex: set ft=jsdoc :
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["vite.config.ts"]
 }

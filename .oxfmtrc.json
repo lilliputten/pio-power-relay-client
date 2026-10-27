@@ -10,5 +10,8 @@
       ["value-parent", "value-sibling", "value-index"]
     ],
     "newlinesBetween": true
+  },
+  "sortTailwindcss": {
+    "stylesheet": "src/index.css"
   }
 }

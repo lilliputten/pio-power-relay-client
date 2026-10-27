@@ -1,4 +1,4 @@
-/*! Convert all oklch colors in the given css file to hex ones.
+/*! Convert all oklch colors in the given css file to hex values.
  *
  * @since 2026.10.26
  * @changed 2026.10.26, 21:48
