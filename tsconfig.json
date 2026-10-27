@@ -9,9 +9,7 @@ ex: set ft=jsdoc :
     /* Path Aliases */
     // "baseUrl": ".", // DEPRECATED
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     }
   },
   "files": [],

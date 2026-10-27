@@ -6,34 +6,24 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
-@import '@fontsource-variable/inter';
+
+/* NOTE: It's not neccessary to use inter to save space on the esp32 littlefs partition */
+/* @import '@fontsource-variable/inter'; */
 
 @custom-variant dark (&:is(.dark *));
 
 /* @custom-variant dark (&:where(.dark, .dark *)); */
 
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e3e7e8;
-  --code-bg: #f4f3ec;
-  --accent: #f1f3f3;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* --sans: system-ui, 'Segoe UI', Roboto, sans-serif; */
+  /* --heading: system-ui, 'Segoe UI', Roboto, sans-serif; */
+  --font-mono: ui-monospace, Consolas, monospace;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
+  font: 18px/145% var(--font-sans);
   letter-spacing: 0.18px;
   color-scheme: light dark;
-  color: var(--text);
-  /* background: var(--background); */
-  background: var(--bg);
+  color: var(--foreground);
+  background: var(--background);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -43,7 +33,19 @@
     font-size: 16px;
   }
 
+  /* --text: #6b6375; */
+  /* --text-h: #08060d; */
+  /* --bg: #fff; */
+  --border: #e3e7e8;
+  /* --code-bg: #f4f3ec; */
+  --accent: #f1f3f3;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
   --background: #fff;
+  --code-background: #f4f3ec;
   --foreground: #090b0c;
   --card: #fff;
   --card-foreground: #090b0c;
@@ -75,25 +77,6 @@
   --sidebar-ring: #9ca8ab;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
 #root {
   width: 1126px;
   max-width: 100%;
@@ -108,14 +91,13 @@
 
 body {
   margin: 0;
-  /* border: 1px solid red; */
 }
 
 h1,
 h2 {
-  font-family: var(--heading);
+  font-family: var(--font-heading);
   font-weight: 500;
-  color: var(--text-h);
+  color: var(--foreground);
 }
 
 h1 {
@@ -142,22 +124,36 @@ p {
 
 code,
 .counter {
-  font-family: var(--mono);
+  font-family: var(--font-mono);
   display: inline-flex;
   border-radius: 4px;
-  color: var(--text-h);
+  color: var(--foreground);
 }
 
 code {
   font-size: 15px;
   line-height: 135%;
   padding: 4px 8px;
-  background: var(--code-bg);
+  background: var(--code-background);
+}
+
+/* Hide srollbar */
+.overflow-hidden {
+  /* Enforce scrolling functionality */
+  overflow: auto;
+  /* IE and Old Edge */
+  -ms-overflow-style: none;
+  /* Firefox */
+  scrollbar-width: none;
+}
+/* Chrome, Safari, and Opera */
+.overflow-hidden::-webkit-scrollbar {
+  display: none;
 }
 
 @theme inline {
+  --font-sans: sans-serif; /* 'Inter Variable', sans-serif; */
   --font-heading: var(--font-sans);
-  --font-sans: 'Inter Variable', sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -199,7 +195,19 @@ code {
 }
 
 .dark {
+  /* --text: #9ca3af; */
+  /* --text-h: #f3f4f6; */
+  /* --bg: #16171d; */
+  --border: #2e303a;
+  /* --code-bg: #1f2028; */
+  --accent: #c084fc;
+  --accent-bg: rgba(192, 132, 252, 0.15);
+  --accent-border: rgba(192, 132, 252, 0.5);
+  --social-bg: rgba(47, 48, 58, 0.5);
+  --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+
   --background: #090b0c;
+  --code-background: #1f2028;
   --foreground: #f9fbfb;
   --card: #161b1d;
   --card-foreground: #f9fbfb;
@@ -230,6 +238,10 @@ code {
   --sidebar-accent-foreground: #f9fbfb;
   --sidebar-border: #ffffff1a;
   --sidebar-ring: #67787c;
+}
+
+.dark #social .button-icon {
+  filter: invert(1) brightness(2);
 }
 
 @layer base {

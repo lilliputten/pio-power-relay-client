@@ -1,10 +1,13 @@
-import { AppSample } from '@/components/app';
+import { AppRoutes } from '@/AppRoutes';
+import { AppLayout } from '@/components/layouts';
 import { AppWrapper } from '@/components/wrappers';
 
 export function App() {
   return (
     <AppWrapper>
-      <AppSample />
+      <AppLayout>
+        <AppRoutes />
+      </AppLayout>
     </AppWrapper>
   );
 }

@@ -25,9 +25,7 @@
     /* Path Aliases */
     // "baseUrl": ".", // DEPRECATED
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src"]

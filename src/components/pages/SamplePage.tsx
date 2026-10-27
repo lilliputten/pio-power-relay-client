@@ -1,3 +1,4 @@
+import { cn } from 'cn';
 import { FileText } from 'lucide-react';
 import React from 'react';
 
@@ -5,17 +6,24 @@ import heroImg from '@/assets/hero.png';
 import reactLogo from '@/assets/react.svg';
 import viteLogo from '@/assets/vite.svg';
 import { Button } from '@/components/ui/button';
+
+import './SamplePage.css';
+import { isDev } from '@/config';
 import { useRelayStore } from '@/store';
 
-import './AppSample.css';
-
-export function AppSample() {
+export function SamplePage() {
   const [count, setCount] = React.useState(0);
   const { isPowerOn, togglePower } = useRelayStore();
 
   return (
     <>
-      <section id="center">
+      <section
+        id="center"
+        className={cn(
+          isDev && '__LogoAndTitle_First', // DEBUG
+          'mt-16', // Leave room for the header
+        )}
+      >
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
           <img src={reactLogo} className="framework" alt="React logo" />
@@ -36,7 +44,7 @@ export function AppSample() {
 
       <section id="relay-test">
         <div id="docs">
-          <FileText className="size-5 text-blue-500 mb-4" />
+          <FileText className="mb-4 size-5 text-blue-500" />
           {/*
           <svg className="icon" role="presentation" aria-hidden="true">
             <use href="/icons.svg#documentation-icon"></use>
